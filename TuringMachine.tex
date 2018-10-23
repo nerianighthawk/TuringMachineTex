@@ -1,0 +1,109 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{ascmac}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{blkarray}
+\usepackage{latexsym}
+\usepackage[dvipdfmx]{graphicx}
+\usepackage{tikz}
+\newcounter{nombre}
+
+\makeatletter
+\def\Left#1#2\Right{\begingroup%
+   \def\ts@r{\nulldelimiterspace=0pt \mathsurround=0pt}%
+   \let\@hat=#1%
+   \def\sht@im{#2}%
+   \def\@t{{\mathchoice{\def\@fen{\displaystyle}\k@fel}%
+          {\def\@fen{\textstyle}\k@fel}%
+          {\def\@fen{\scriptstyle}\k@fel}%
+          {\def\@fen{\scriptscriptstyle}\k@fel}}}%
+   \def\g@rin{\ts@r\left\@hat\vphantom{\sht@im}\right.}%
+   \def\k@fel{\setbox0=\hbox{$\@fen\g@rin$}\hbox{%
+      $\@fen \kern.3875\wd0 \copy0 \kern-.3875\wd0%
+      \llap{\copy0}\kern.3875\wd0$}}%
+      \def\pt@h{\mathopen\@t}\pt@h\sht@im%
+      \Right}%
+\def\Right#1{\let\@hat=#1%
+   \def\st@m{\mathclose\@t}%
+   \st@m\endgroup}
+\makeatother
+
+\def \tp {{\rm tp}}
+\def \stp{{\rm stp}}
+\def \acl {{\rm acl}}
+\def \dcl {{\rm dcl}}
+\def \cl {{\rm cl}}
+\def \ccl {{\rm ccl}}
+
+\def \dom {{\rm dom}}
+\def \ran {{\rm ran}}
+\def \ind {\mathop{\smile \hskip -0.9em ^| \ }}
+\def \dep {\mathop{\not \!\! \ind}}
+\def \non-ort {{\not\!\!\bot}}
+\def \domeq {\sqsubseteq\!\!\!\!\sqsupseteq}
+
+\def \Th {{\rm Th}}
+\def \RM {{\rm RM}}
+\def \Z  {{\mathbb Z}}
+\def \N {{\mathbb N}}
+\def \Q {{\mathbb Q}}
+\def \R {{\mathbb R}}
+\def \C {{\mathbb C}}
+\def \M {{\cal M}}
+\def \U {{\rm U}}
+\def \S#1 {{\rm S}#1 }
+\def \lh{{\rm lh}}
+
+\def \imp {{\Rightarrow}}
+\def \notequiv {{\hskip 0.1em \not\hskip -0.1em \leftrightarrow}}
+\def \tie{ \,{\widehat { \ }}\, }
+
+\def\proclaim #1. #2\par{\medbreak
+  \noindent{\bf#1 \enspace}{\sl#2}\par
+  \ifdim\lastskip<\medskipamount \removelastskip\penalty55\medskip\fi}
+\renewcommand\thefootnote{*\arabic{footnote}}
+\newtheorem{theo}{Theorem}[section]
+\newtheorem{coro}[theo]{Corollary}
+\newtheorem{prop}[theo]{Proposition}
+\newtheorem{rem}[theo]{Remark}
+\newtheorem{exam}[theo]{example}
+\newtheorem{exer}[theo]{Exercise}
+\newtheorem{lem}[theo]{Lemma}
+\newtheorem{fact}{fact}
+\newtheorem{claim}{Claim}[theo]
+\renewcommand{\theclaim}{\Alph{claim}}
+\renewcommand{\thefact}{}
+\newtheorem{shelah}{Shelah's conjecture}
+\theoremstyle{definition}
+\newtheorem{defi}{Definition}[section]
+\newcommand{\prob}[1][]{\refstepcounter{nombre}#1(\thenombre)}
+\renewcommand{\refname}{References}
+\renewcommand{\theshelah}{}
+
+\title{Turing Machine}
+\author{ねりあ}
+
+\begin{document}
+
+\maketitle
+
+\section{Turing Machineの定義}
+
+\begin{defi}[テープの定義]
+
+\end{defi}
+
+\begin{defi}[Turing Machineの定義]
+$M:=(Q,\Gamma,b,\Sigma,\delta,q_{0},F)$が以下を満たす時, $M$をTuring Machine という.
+\begin{enumerate}
+\item $Q$は有限かつ空でない集合とする.
+$Q$の元を状態と呼ぶ.
+\item $\Gamma$は有限かつ空でない集合とする.
+$\Gamma$の元を記号と呼ぶ.
+\item $b\in \Gamma$が存在する.
+$b$を空白記号と呼ぶ.
+\item 
+\end{enumerate}
+\end{defi}
+\end{document}
